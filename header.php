@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WordPress Theme
+ * @package fancy_lab
  */
 ?>
 <!doctype html>
@@ -19,15 +19,17 @@
 
 <body <?php body_class(); ?>>
 	<div id="main-site" class="page-wrap">
-		<header>
-			<div class="site-header">
+		<header class="site-header">
+			<div class="smart-sticky-header">
 				<div class="container">
-					<div class="smart-sticky-header">
-						<div class="logo">
-							<a href="#"><img src=""></a>
+					<div class="row">
+						<div class="col-3">
+							<div class="logo">
+								<a href="#"><img src="" alt="Logo"></a>
+							</div>
 						</div>
-						<div class="nav-links">
-							<ul>
+						<div class="col-9">
+							<ul class="nav-links">
 								<li><a href="#">Home</a></li>
 								<li><a href="#">About</a></li>
 								<li><a href="#">Privacy Policy</a></li>

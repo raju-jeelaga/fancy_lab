@@ -1,5 +1,5 @@
 /*
-Theme Name: WordPress Theme
+Theme Name: Fancy Lab
 Author: Raju Jeelaga
 Author URI: https://profiles.wordpress.org/raju427/
 Description: 
@@ -42,7 +42,6 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
-
 body {
 	margin: 0;
 	font-family: 'Poppins';
@@ -477,13 +476,8 @@ a:hover, a:active {
 }
 
 /** Main CSS**/
-.container{
-	width:1200px;
-	display: inline-block;
-	margin:0 auto;
-}
 .site-header{
-	background-color: #0073C6;
+	background-color: #ccc;
 	padding:10px 0px;
 }
 .smart-sticky-header{
