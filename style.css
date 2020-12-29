@@ -483,3 +483,6 @@ a:hover, a:active {
 .smart-sticky-header{
 
 }
+.main-menu .menu{
+	display: flex;
+}

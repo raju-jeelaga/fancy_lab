@@ -23,18 +23,27 @@
 			<div class="smart-sticky-header">
 				<div class="container">
 					<div class="row">
+						<div class="search">
+							<p>Search</p>
+						</div>
+					</div>
+					<div class="row">
 						<div class="col-3">
 							<div class="logo">
-								<a href="#"><img src="" alt="Logo"></a>
+								<a href="#"><h1>Logo</h1></a>
 							</div>
 						</div>
 						<div class="col-9">
-							<ul class="nav-links">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Contact Us</a></li>
-							</ul>
+							<div class="account">Account</div>
+							<nav class="main-menu">
+								<?php
+									wp_nav_menu(
+										array(
+											'theme_location' => 'main-menu',
+										)
+									);
+								?>
+							</nav>
 						</div>
 					</div>
 				</div>
