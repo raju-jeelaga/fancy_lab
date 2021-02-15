@@ -7,6 +7,7 @@
  * @package fancy_lab
  */
 
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 function fancy_lab_scripts(){
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/inc/bootstrap.min.js', array('jquery'), '5.0', true);
@@ -46,8 +47,40 @@ function fancy_lab_config(){
 	if ( ! isset( $content_width ) ) {
 		$content_width = 600;
 	}
+
+	add_theme_support( 'custom-logo', array(
+		'height'      => 85,
+		'width'       => 160,
+		'flex-width'  => true,
+		'flex-height' => true,
+	) );
+
+
 	
 }
-
 add_action('after_setup_theme', 'fancy_lab_config', 0);
 
+/**
+ * If WooCommerce is active, we want to enqueue a file
+ * with a couple of template overrides
+ */
+if( class_exists('woocommerce')){
+	require get_template_directory() . '/inc/wc-modifications.php';
+}
+
+
+/**
+ * Show cart contents / total Ajax
+ */
+add_filter( 'woocommerce_add_to_cart_fragments', 'fancy_lab_woocommerce_header_add_to_cart_fragment' );
+function fancy_lab_woocommerce_header_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+
+	ob_start();
+
+	?>
+	<span class="items"><?php echo esc_html( WC()->cart->get_cart_contents_count() ); ?></span>
+	<?php
+	$fragments['span.items'] = ob_get_clean();
+	return $fragments;
+}
